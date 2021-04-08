@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message Text {
+    bytes data = 1;
+}
+
+service DB_LOADER {
+    rpc transfer_DB(stream Text) returns (Text) {};
+    rpc transfer_DES_key(Text) returns (Text) {};
+}
